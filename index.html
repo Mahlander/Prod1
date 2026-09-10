@@ -22,7 +22,7 @@
 
       <section class="status-card" aria-label="Produktionsstatus">
         <div><span class="live-dot"></span>Produktionen är igång</div>
-        <strong id="clock">08:42</strong>
+        <div class="status-actions"><button id="sound-toggle" class="sound-button">🔕 Aktivera ljud</button><strong id="clock">08:42</strong></div>
       </section>
 
       <section id="home-view" class="view active">
@@ -54,10 +54,20 @@
         <div id="history" class="history-list"></div>
       </section>
 
+      <section id="analysis-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">FÖRBÄTTRINGSARBETE</p><h2>Sammanställning</h2></div></div>
+        <p class="intro">Baserat på händelser som registrerats under dagens skift.</p>
+        <div class="metrics"><div><span>Händelser idag</span><strong id="event-total">15</strong></div><div><span>Undvikna stopp</span><strong>9</strong></div></div>
+        <section class="analysis-section"><h3>Vanligaste felorsakerna</h3><div id="cause-chart" class="bar-list"></div></section>
+        <section class="analysis-section"><h3>Stationer med flest händelser</h3><div id="station-chart" class="bar-list"></div></section>
+        <section class="analysis-section"><h3>Material som oftast brister</h3><div id="material-chart" class="bar-list"></div></section>
+      </section>
+
       <nav class="bottom-nav" aria-label="Huvudmeny">
         <button class="nav-item active" data-view="home-view"><span>⌂</span>Översikt</button>
         <button class="nav-item" data-view="tasks-view"><span>▣</span>Uppdrag</button>
         <button class="nav-item" data-view="history-view"><span>◷</span>Historik</button>
+        <button class="nav-item" data-view="analysis-view"><span>▥</span>Analys</button>
       </nav>
     </main>
 

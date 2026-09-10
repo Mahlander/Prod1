@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d2b45" />
+    <title>Flödesvakt – material & Andon</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">MONTERING · SKIFT A</p>
+          <h1>Flödesvakt</h1>
+        </div>
+        <button class="profile" aria-label="Öppna profil">ML</button>
+      </header>
+
+      <section class="status-card" aria-label="Produktionsstatus">
+        <div><span class="live-dot"></span>Produktionen är igång</div>
+        <strong id="clock">08:42</strong>
+      </section>
+
+      <section id="home-view" class="view active">
+        <div class="section-heading">
+          <div><p class="eyebrow">LÄGET JUST NU</p><h2>Prioriterade händelser</h2></div>
+          <span class="count-pill" id="active-count">3 aktiva</span>
+        </div>
+        <div id="alerts" class="alert-list"></div>
+
+        <div class="section-heading stations-heading">
+          <div><p class="eyebrow">PRODUKTIONSLINJE 1</p><h2>Stationer</h2></div>
+          <button class="text-button" id="show-all">Visa alla</button>
+        </div>
+        <div id="stations" class="station-grid"></div>
+      </section>
+
+      <section id="tasks-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">MATERIALFÖRSÖRJNING</p><h2>Truckuppdrag</h2></div></div>
+        <p class="intro">Uppdragen är sorterade efter risken att stationen stannar.</p>
+        <div id="tasks" class="task-list"></div>
+      </section>
+
+      <section id="history-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">UPPFÖLJNING</p><h2>Historik</h2></div></div>
+        <div class="metrics">
+          <div><span>Åtgärdade idag</span><strong id="resolved-total">12</strong></div>
+          <div><span>Undvikna stopp</span><strong>9</strong></div>
+        </div>
+        <div id="history" class="history-list"></div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Huvudmeny">
+        <button class="nav-item active" data-view="home-view"><span>⌂</span>Översikt</button>
+        <button class="nav-item" data-view="tasks-view"><span>▣</span>Uppdrag</button>
+        <button class="nav-item" data-view="history-view"><span>◷</span>Historik</button>
+      </nav>
+    </main>
+
+    <dialog id="detail-dialog">
+      <div class="dialog-head"><div><p id="dialog-type" class="eyebrow"></p><h2 id="dialog-title"></h2></div><button id="close-dialog" class="close" aria-label="Stäng">×</button></div>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
+    </script>
+  </body>
+</html>

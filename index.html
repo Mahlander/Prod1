@@ -17,7 +17,7 @@
           <p class="eyebrow">MONTERING · SKIFT A</p>
           <h1>Flödesvakt</h1>
         </div>
-        <button class="profile" aria-label="Öppna profil">ML</button>
+        <div class="header-actions"><button id="install-app" class="install-button" aria-label="Installera appen">⇩ Installera</button><button class="profile" aria-label="Öppna profil">ML</button></div>
       </header>
 
       <section class="status-card" aria-label="Produktionsstatus">
@@ -88,6 +88,10 @@
     <dialog id="detail-dialog">
       <div class="dialog-head"><div><p id="dialog-type" class="eyebrow"></p><h2 id="dialog-title"></h2></div><button id="close-dialog" class="close" aria-label="Stäng">×</button></div>
       <div id="dialog-content"></div>
+    </dialog>
+    <dialog id="install-dialog">
+      <div class="dialog-head"><div><p class="eyebrow">INSTALLERA FLÖDESVAKT</p><h2>App på hemskärmen</h2></div><button id="close-install" class="close" aria-label="Stäng">×</button></div>
+      <div id="install-content"></div>
     </dialog>
     <div id="toast" role="status" aria-live="polite"></div>
     <script src="app.js?v=3"></script>

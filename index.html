@@ -50,6 +50,14 @@
         <div id="tasks" class="task-list"></div>
       </section>
 
+      <section id="terminal-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">TRUCKTERMINAL · MATERIALFÖRSÖRJNING</p><h2>Min körlista</h2></div></div>
+        <section class="terminal-shift"><span>AKTIVT SKIFT</span><strong id="terminal-shift">Dagskift · 200 motorer</strong><small>Truck 3 · Zon A</small></section>
+        <p class="terminal-label">VANLIGA BESTÄLLNINGAR</p>
+        <div id="terminal-orders" class="terminal-orders"></div>
+        <section class="terminal-urgent-wrap"><p class="terminal-label urgent-label">BRÅTTOM / AKUT</p><div id="terminal-urgent"></div></section>
+      </section>
+
       <section id="history-view" class="view">
         <div class="section-heading"><div><p class="eyebrow">UPPFÖLJNING</p><h2>Historik</h2></div></div>
         <div class="metrics">
@@ -71,6 +79,7 @@
       <nav class="bottom-nav" aria-label="Huvudmeny">
         <button class="nav-item active" data-view="home-view"><span>⌂</span>Översikt</button>
         <button class="nav-item" data-view="tasks-view"><span>▣</span>Uppdrag</button>
+        <button class="nav-item" data-view="terminal-view"><span>▤</span>Terminal</button>
         <button class="nav-item" data-view="history-view"><span>◷</span>Historik</button>
         <button class="nav-item" data-view="analysis-view"><span>▥</span>Analys</button>
       </nav>
